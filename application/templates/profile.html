@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h3>My Profile</h3>
+  <table class="bordered highlight">
+    <tr>
+      <th>Username</th>
+      <td>{{ user.username }}</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{ user.email }}</td>
+    </tr>
+    <tr>
+      <th>Added Time</th>
+      <td>{{ user.added_ts.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+    </tr>
+  </table>
+{% endblock %}

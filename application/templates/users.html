@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table class="bordered highlight">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Added</th>
+        <th>Last Login</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for u in users %}
+        <tr>
+          <td><a href="{{ url_for('home.profile', username=u.username) }}">{{ u.username }}</a></td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.added_ts.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td>{% if u.last_login_ts %}{{ u.last_login_ts.strftime('%Y-%m-%d %H:%M:%S') }}{% endif %}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
