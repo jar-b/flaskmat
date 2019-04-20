@@ -16,7 +16,6 @@ if __name__ == '__main__':
         if args.create:
             db.create_all()
         
-        # add dummy users
-        User.create_user('user1', 'user1@place.org')
-        User.create_user('user2', 'user2@place.org')
-
+            # add dummy users
+            User.create_user('user1', 'user1@place.org')
+            User.create_user('user2', 'user2@place.org')
