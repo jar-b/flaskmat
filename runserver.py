@@ -1,7 +1,7 @@
 from gevent import monkey; monkey.patch_all() # run before anything else
 
 from application.app import app
-from gevent.wsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 from werkzeug.debug import DebuggedApplication
 
 if __name__ == '__main__':
