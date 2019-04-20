@@ -5,12 +5,14 @@ Flask + Materialize = flaskmat. A web application that does nothing, because lea
 ## Setup
 
 Create and activate a virtualenv (preferably python3).
+
 ```sh
-virtualenv fm
-source fm/bin/activate
+virtualenv venv
+source venv/bin/activate
 ```
 
 Navigate to the `flaskmat` directory, then install required packages and create dummy users.
+
 ```sh
 # install packages
 pip install -r requirements.txt
@@ -20,6 +22,7 @@ python user_mgmt.py -c
 ```
 
 Finally, start the server.
+
 ```sh
 python runserver.py              # production, port 8080 (default)
 python runserver.py -d -p 8081   # debug, port 8081
