@@ -12,6 +12,7 @@ app.register_blueprint(home)
 
 # DB
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data/application.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 # login manager
