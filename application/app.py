@@ -3,6 +3,7 @@ from application import config
 from .views.home import home
 from .models import User
 from .ext import db, login_manager
+from .config import DATA_DIR
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -11,7 +12,7 @@ app.config.from_object(config)
 app.register_blueprint(home)
 
 # DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data/application.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+DATA_DIR+'/application.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
